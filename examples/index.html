@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>examples</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            width: 300px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .down-label {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #ccc;
+            display: block;
+            width: 100px;
+            margin: 10px auto;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <vue-to-pdf file-name="我的PDF文件">
+            <div class="box">
+                <div>测试内容 </div>
+                <download-pdf><button>点击下载pdf</button></download-pdf>
+            </div>
+            <div class="box">
+                <div>测试内容 </div>
+                <download-image><button>点击下载image</button></download-image>
+            </div>
+        </vue-to-pdf>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="../lib/main.js"></script>
+    <script>
+        Vue.use(vueToPDF)
+        new Vue({
+            el: '#app'
+        })
+
+
+    </script>
+</body>
+
+</html>

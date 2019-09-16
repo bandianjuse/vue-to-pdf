@@ -1,0 +1,28 @@
+{
+  "name": "vue-to-pdf",
+  "version": "0.0.1",
+  "description": "一个vue.js的组件，可以将html转化为pdf和图片并进行下载",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "rollup -c"
+  },
+  "keywords": [
+    "vue.js",
+    "pdf",
+    "image"
+  ],
+  "author": "caijingsong",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.21.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.3",
+    "jspdf": "^1.5.3"
+  }
+}
