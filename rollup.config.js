@@ -6,7 +6,7 @@ export default {
     output: [
         {
             name: 'vueToPDF',
-            file: 'lib/main-browser.js',
+            file: 'examples/main-browser.js',
             format: 'iife'
         },
         {
