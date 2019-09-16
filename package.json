@@ -1,6 +1,6 @@
 {
   "name": "vue-to-pdf",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个vue.js的组件，可以将html转化为pdf和图片并进行下载",
   "main": "lib/main.js",
   "files": [
