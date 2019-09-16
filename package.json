@@ -16,13 +16,15 @@
   ],
   "author": "caijingsong",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandianjuse/vue-to-pdf/issues"
+  },
+  "homepage": "https://github.com/bandianjuse/vue-to-pdf#readme",
   "devDependencies": {
+    "html2canvas": "^1.0.0-rc.3",
+    "jspdf": "^1.5.3",
     "rollup": "^1.21.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
-  },
-  "dependencies": {
-    "html2canvas": "^1.0.0-rc.3",
-    "jspdf": "^1.5.3"
   }
 }
