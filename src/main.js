@@ -1,6 +1,6 @@
-import vueToPdf from './vueToPdf';
-import downloadPdf from './downloadPdf';
-import downloadImage from './downloadImage';
+import vueToPdf from './vueToPdf.vue';
+import downloadPdf from './downloadPdf.vue';
+import downloadImage from './downloadImage.vue';
 
 const install = (Vue) => {
   Vue.component('VueToPdf', vueToPdf)

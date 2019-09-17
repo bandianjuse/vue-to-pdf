@@ -1,29 +1,19 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs'
+import vuePlugin from 'rollup-plugin-vue'
+import { terser } from "rollup-plugin-terser";
 
 export default {
     input: 'src/main.js',
-    output: [
-        {
-            name: 'vueToPDF',
-            file: 'examples/main-browser.js',
-            format: 'iife'
-        },
-        {
-            name: 'vueToPDF',
-            file: 'lib/main.js',
-            format: 'es'
-        }
-    ],
-    watch: {
-        include: 'src/**'
+    output: {
+        name: 'vueToPDF',
+        file: 'lib/main.js',
+        format: 'umd'
     },
     plugins: [
         resolve(),
-        commonjs({
-            'namedExports': {
-                './lib/main.js': ['__moduleExports']
-            }
-        })
+        commonjs(),
+        vuePlugin(),
+        terser()
     ]
 };
