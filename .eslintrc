@@ -1,0 +1,10 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-undef": "off"
+    },
+    "extends": "eslint:recommended"
+}
