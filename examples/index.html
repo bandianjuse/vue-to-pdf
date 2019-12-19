@@ -28,29 +28,54 @@
             text-align: center;
             cursor: pointer;
         }
+        .container{
+            width: 600px;padding:10px;
+            position: absolute;
+            top:-9999px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <vue-to-pdf file-name="我的PDF文件">
-            <div class="box">
-                <div>测试内容 </div>
-                <download-pdf><button>点击下载pdf</button></download-pdf>
+        <div style="margin-bottom: 20px;">
+            <button @click="changeContent">改变内容</button>
+            <button @click="downloadPdf">获取PDF</button>
+        </div>
+         <div class="container" ref="box">
+            <div class="box" >
+                <div>{{text}} </div>
             </div>
-            <div class="box">
-                <div>测试内容 </div>
-                <download-image><button>点击下载image</button></download-image>
-            </div>
-        </vue-to-pdf>
-
+         </div>
+        <iframe :src="pdfUrl" width="700" height="500" frameborder="1"></iframe>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script src="../lib/main.js"></script>
     <script>
         Vue.use(vueToPDF)
         new Vue({
-            el: '#app'
+            el: '#app',
+            data() {
+                return {
+                    isShow: false,
+                    pdfUrl: '',
+                    text: '测试内容'
+                }
+            },
+            methods: {
+                changeContent() {
+                    this.text = '新的内容'
+                },
+                downloadPdf() {
+                    
+                    // this.$PDFSave(this.$refs['box'], '我的pdf')
+                    var d = this.$PDFOutput(this.$refs['box'])
+                    
+                    d.then((value) => {
+                        this.pdfUrl = value;
+                    })
+                }
+            }
         })
 
 

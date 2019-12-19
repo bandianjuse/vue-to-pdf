@@ -14,9 +14,11 @@ export default {
   methods: {
     downloadEvent() {
       const $selector = this.refs.selector;
-      const name = this.fileName || this.name;
+      // const name = this.fileName || this.name;
 
       if (!$selector) return;
+
+
       html2canvas($selector).then(canvas => {
         var contentWidth = canvas.width;
         var contentHeight = canvas.height;
@@ -51,7 +53,13 @@ export default {
           }
         }
 
-        pdf.save(`${name}.pdf`);
+        // pdf.save(`${name}.pdf`);
+         var pdfBlob = pdf.output('blob')
+
+         var objectURL = URL.createObjectURL(pdfBlob);
+
+        console.log(111111111111);
+        console.log(objectURL);
       });
     }
   },

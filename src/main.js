@@ -1,11 +1,8 @@
-import vueToPdf from './vueToPdf.vue';
-import downloadPdf from './downloadPdf.vue';
-import downloadImage from './downloadImage.vue';
+import output from './output';
 
 const install = (Vue) => {
-  Vue.component('VueToPdf', vueToPdf)
-  Vue.component('DownloadPdf', downloadPdf)
-  Vue.component('DownloadImage', downloadImage)
+  Vue.prototype.$PDFOutput = (dom) => output.call(null, dom, 'output')
+  Vue.prototype.$PDFSave = (dom, name) => output.call(null, dom, 'save', { name: name })
 };
 
 export default {

@@ -10,7 +10,16 @@ export default {
     fileName: {
       type: String,
       default: "PDF-file"
+    },
+    isOutput: {
+      type: Boolean,
+      default: false
     }
+  },
+  watch: {
+      isOutput(val) {
+          console.log(val)
+      }
   },
   provide() {
     return {

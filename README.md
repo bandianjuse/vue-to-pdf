@@ -21,25 +21,26 @@ Vue.use(vueToPdf);
 ## 使用
 
 ```js
-<vue-to-pdf file-name="我的PDF文件">
-    <div>这里是测试内容</div>
-    <div data-html2canvas-ignore>这里是忽略的内容</div>
-    <download-pdf><button>点击下载pdf</button><download-pdf>
-    <download-image><button>点击下载image</button></download-image>
-</vue-to-pdf>                      
+new Vue({
+    template: `<div ref="content">打印出的内容</div>`,
+    mounted() {
+        this.$PDFSave(this.$refs['content'], '我的文件')
+
+        // 或
+        var promiseObj = this.$PDFOutput(this.$refs['box'])
+
+        promiseObj.then((value) => {
+            console.log(value)
+        })              
+
+    }  
+})
+                  
 ```
 
-### vue-to-pdf
-> 被vue-to-pdf组件的内容可以转化为pdf或图片。
+### $PDFSave(dom, name)
+> vue 实例方法，可以将dom转换成pdf输出
 
-### download-pdf
-> 使用download-pdf组件将会添加pdf点击下载事件。
+### promiseObj(dom)
+> vue 实例方法, 可以将dom转成pdf的dataurl, 返回promise。
 
-### download-image
-> 使用download-image组件将会添加image点击下载事件
-
-### file-name
-> 下载的文件名，可以在 <download-pdf>和<download-image>添加file-name props 来设置下载不同名称的效果。
-
-### data-html2canvas-ignore
-> 在dom标签添加data-html2canvas-ignore属性，标签的内容不会添加到pdf和image里
