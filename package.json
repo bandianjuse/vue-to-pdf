@@ -22,7 +22,7 @@
   "homepage": "https://github.com/bandianjuse/vue-to-pdf#readme",
   "devDependencies": {
     "html2canvas": "^1.0.0-rc.3",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "rollup": "^1.21.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "^7.0.0",
